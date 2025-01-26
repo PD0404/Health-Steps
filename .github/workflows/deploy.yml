@@ -23,3 +23,10 @@ jobs:
 
       - name: Run Application
         run: java -jar target/*.jar
+        
+      - name: Upload Surefire Test Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: /home/runner/work/Health-Steps/Health-Steps/target/surefire-reports/
+
