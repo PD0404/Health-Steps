@@ -10,23 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up JDK 21
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Install Maven
+        run: sudo apt-get install -y maven
+
       - name: Build Application
         run: mvn clean install
 
-      - name: Run Application
-        run: java -jar target/*.jar
-        
+      - name: Run Application in Background
+        run: nohup java -jar target/*.jar &  
+
       - name: Upload Surefire Test Reports
         uses: actions/upload-artifact@v4
         with:
           name: surefire-reports
-          path: /home/runner/work/Health-Steps/Health-Steps/target/surefire-reports/
-
+          path: target/surefire-reports/
