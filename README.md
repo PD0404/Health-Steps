@@ -1,4 +1,5 @@
-Health Steps Challenge
+Health Steps Challenge  
+
 Objective: Process step data and generate the following reports-
 1.	Overall Individual Leaderboard
 2.	Overall Team Leaderboard
@@ -6,7 +7,9 @@ Objective: Process step data and generate the following reports-
 4.	User Aggregate Report
 Assumptions:
 1.	Step Statistics is calculated based on total number of days the user takes at least 1 step.
-Technologies: Java, Spring Boot, Spring JPA, RESTful APIs, MySQL, Maven.
+   
+Technologies: Java, Spring Boot, Spring JPA, RESTful APIs, MySQL, Maven.  
+
 Approach:
 1.	Created a Spring Boot Application using Spring Initializr.
 2.	Created a MySQL Database- HealthSteps and added two Tables- StepsData and Daily_Steps_Count.
